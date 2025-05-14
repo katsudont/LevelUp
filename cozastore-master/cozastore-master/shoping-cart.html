@@ -578,7 +578,7 @@
                         </div>
                     </div>
 
-                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" id="checkout-btn">
                         Proceed to Checkout
                     </button>
                 </div>
@@ -893,6 +893,57 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     updateCartTotals();
+});
+</script>
+
+<script>
+document.getElementById('checkout-btn').addEventListener('click', function () {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    const order = {
+        orderId: Date.now(), // Unique order ID
+        status: "pending",
+        items: cart.map(item => ({
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity
+        })),
+        total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
+        customer: {
+            name: "John Doe", // You can let the user fill this
+            email: "johndoe@example.com"
+        }
+    };
+
+    // Log for testing
+    console.log("Order to send:", order);
+
+    // Send to Activepieces webhook
+    fetch("https://cloud.activepieces.com/api/v1/webhooks/mpyoP2rPPK6p8NdsBMcxT", { // Replace this URL
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(order)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Response from Activepieces:", data);
+        if (data.redirectUrl) {
+            window.location.href = data.redirectUrl; // Redirect to Stripe checkout if applicable
+        } else {
+            alert("Order submitted. Please wait for payment instructions.");
+        }
+    })
+    .catch(error => {
+        console.error("Error sending order:", error);
+        alert("Something went wrong. Try again later.");
+    });
 });
 </script>
 
