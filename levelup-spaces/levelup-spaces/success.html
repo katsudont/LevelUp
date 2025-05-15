@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You | LevelUp Spaces</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fffaf0; /* Cream */
+      margin: 0;
+      padding: 0;
+    }
+
+    .success-page {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: #ffe5e0; /* Light coral pink */
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #d65a4e; /* Coral pink for heading */
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #f88379; /* Coral tone */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e66e61;
+    }
+  </style>
+</head>
+<body>
+  <div class="success-page">
+    <h1>Thank You for Your Purchase!</h1>
+    <p>Your order has been placed successfully. A confirmation email will be sent to you shortly.</p>
+    <a href="mark-shipped.php" class="btn">View Order Status</a>
+  </div>
+
+  <script>
+    // Optionally update order status in backend
+    fetch("mark-success.php")
+      .then(() => console.log("Order marked as accepted and dispatch slip created."));
+  </script>
+</body>
+</html>
