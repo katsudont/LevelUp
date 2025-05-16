@@ -338,7 +338,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Menu ]*/
 
 body {
-  background-color: #fff5e6; /* light warm background */
+  background-color: #fff; /* light warm background */
   color: #222;
 }
 
@@ -2178,7 +2178,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-102 {
   font-family: Poppins-Regular;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -2203,7 +2203,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-106 {
   font-family: Poppins-Regular;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.2;
 }
 
@@ -2221,7 +2221,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-109 {
   font-family: Poppins-Regular;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.833333;
 }
 
@@ -2246,13 +2246,13 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-113 {
   font-family: Poppins-Light;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7857;
 }
 
 .stext-114 {
   font-family: Poppins-Italic;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.666667;
 }
 

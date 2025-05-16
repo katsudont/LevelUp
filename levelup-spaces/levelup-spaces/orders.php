@@ -84,7 +84,7 @@ if (file_exists($logFile)) {
       <a class="navbar-brand" href="index.html">LevelUp Spaces</a>
       <div class="ms-auto">
         <a href="orders.php" class="btn btn-outline-secondary me-2">Orders</a>
-        <a href="cart.html" class="btn btn-outline-primary">Cart</a>
+        <a href="shoping-cart.html" class="btn btn-outline-primary">Cart</a>
       </div>
     </div>
   </nav>
